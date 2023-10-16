@@ -1,3 +1,4 @@
+package ru.netology.javaqa;
 public class Radio {
     public int currentRadiostation;
 
