@@ -1,49 +1,68 @@
 package ru.netology.javaqa;
+
 public class Radio {
-    public int currentRadiostation;
+    private int currentRadioStation;
+    private int currentVolume;
 
-    public void setToRadiostation() {
-        currentRadiostation = 9;
+    public int getCurrentRadioStation() {
+
+        return currentRadioStation;
     }
 
-    public void nextRadiostation(int next) {
-        if (next < 9) {
-            next = next + 1;
-        } else if (next == 9) {
-            next = 9;
-        } else if (next > 9)
-            next = 0;
-        currentRadiostation = next;
+    public int getCurrentVolume() {
+
+        return currentVolume;
     }
 
-    public void prevRadiostation(int prev) {
-        if (prev >= 9) {
-            prev = prev - 1;
-        } else if (prev <= 0)
-            prev = 0;
-        currentRadiostation = prev;
-    }
-
-    public int currentVolume;
-
-    public void increaseVolume(int volumePluse) {
-        if (volumePluse < 100) {
-            volumePluse = volumePluse + 1;
-        } else if (volumePluse == 100) {
-            volumePluse = 100;
-        } else if (volumePluse > 100) {
-            volumePluse = 100;
+    public void setCurrentRadioStation(int newCurrentRadiostation) {
+        if (newCurrentRadiostation > 9) {
+            return;
         }
-        currentVolume = volumePluse;
+        if (newCurrentRadiostation < 0) {
+            return;
+        }
+        currentRadioStation = newCurrentRadiostation;
     }
 
-    public void decreaseVolume(int volumeMinus) {
-        if (volumeMinus >= 100) {
-            volumeMinus = volumeMinus - 1;
-        } else if (volumeMinus <= 0) {
-            volumeMinus = 0;
+
+    public void setCurrentVolume(int newCurrentVolume) {
+        if (newCurrentVolume > 100) {
+            return;
         }
-        currentVolume = volumeMinus;
+        if (newCurrentVolume < 0) {
+            return;
+        }
+        currentVolume = newCurrentVolume;
+    }
+
+    public void increaseVolume() {
+        if (currentVolume < 100) {
+            currentVolume = currentVolume + 1;
+        }
+    }
+
+    public void decreaseVolume() {
+        if (currentVolume > 0) {
+            currentVolume = currentVolume - 1;
+        }
+    }
+
+    public void increaseRadiostation() {
+        if (currentRadioStation < 9) {
+            currentRadioStation = currentRadioStation + 1;
+        }
+        if (currentRadioStation == 9) {
+            currentRadioStation = 0;
+        }
+    }
+
+    public void decreaseRadiostation() {
+        if (currentRadioStation > 0) {
+            currentRadioStation = currentRadioStation - 1;
+        }
+        if (currentRadioStation == 0) {
+            currentRadioStation = 9;
+        }
     }
 }
 
