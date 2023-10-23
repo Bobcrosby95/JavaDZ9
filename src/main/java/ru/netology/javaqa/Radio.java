@@ -82,7 +82,7 @@ public class Radio {
         if (currentRadioStation < maxNumberRadioStation) {
             currentRadioStation = currentRadioStation + 1;
         }
-        if (currentRadioStation == maxNumberRadioStation) {
+        if (currentRadioStation > maxNumberRadioStation) {
             currentRadioStation = 0;
         }
     }
