@@ -51,7 +51,7 @@ public class Radio {
         if (currentRadioStation < 9) {
             currentRadioStation = currentRadioStation + 1;
         }
-        if (currentRadioStation == 9) {
+        if (currentRadioStation > 9) {
             currentRadioStation = 0;
         }
     }
@@ -65,4 +65,3 @@ public class Radio {
         }
     }
 }
-

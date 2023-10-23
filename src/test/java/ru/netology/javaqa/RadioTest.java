@@ -75,9 +75,9 @@ public class RadioTest {
     @Test
     public void RadiostationIncreaseMax() {
         Radio radio = new Radio();
-        radio.setCurrentRadioStation(9);
+        radio.setCurrentRadioStation(8);
         radio.increaseRadiostation();
-        int expected = 0;
+        int expected = 9;
         int actual = radio.getCurrentRadioStation();
         Assertions.assertEquals(expected, actual);
     }
@@ -97,6 +97,16 @@ public class RadioTest {
         Radio radio = new Radio();
         radio.setCurrentRadioStation(10);
         int expected = 0;
+        int actual = radio.getCurrentRadioStation();
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void RadiostationBoundary2() {
+        Radio radio = new Radio();
+        radio.setCurrentRadioStation(8);
+        radio.increaseRadiostation();
+        int expected = 9;
         int actual = radio.getCurrentRadioStation();
         Assertions.assertEquals(expected, actual);
     }
